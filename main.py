@@ -1,16 +1,7 @@
 n='''
  ________________
-( Di 28. Jan     )
-( 18:00:02 CET   )
-( 2020 Keep your )
-( servers time   )
-( in sync, use   )
-( the ntpd       )
-( package.       )
-( https://help.u )
-( buntu.com/11.1 )
-( 0/serverguide/ )
-( C/NTP.html     )
+(ыыыыыыыыыыыыыыы )
+( ччуууувааааак! )
  ----------------
    o      
     o    
@@ -28,9 +19,6 @@ n='''
 
 
 print(n)
-import win32com.client as wincl
-speak = wincl.Dispatch("SAPI.SpVoice")
-#speak.Speak("Этот модуль импортирован, чтобы мы могли")
 
 import io
  
@@ -72,23 +60,12 @@ def clean(text):# удаляет символы .,/!";%:?*()_+'
 
 blabla = clean(remove_urls(extract_text_from_pdf('3.pdf')))
 #print(blabla)
+
 import pyttsx3
-
 tts = pyttsx3.init()
-
 voices = tts.getProperty('voices')
-
-# Задать голос по умолчанию
 tts.setProperty('voice', 'ru') 
-
-# Попробовать установить предпочтительный голос
-#for voice in voices:
-#    if voice.name == 'Aleksandr':
-#tts.setProperty('voice', voice.id)
 tts.setProperty('rate', 160)
-
-
-#tts.say(blabla)
 tts.save_to_file(blabla,"saved_file.mp3")
 tts.runAndWait()
 
